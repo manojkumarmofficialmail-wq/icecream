@@ -280,6 +280,21 @@
   .slide--dark .hero-img img { max-height: 400px; margin: 0 auto; width: auto; }
 }
 
+/* ---------- Floating WhatsApp button ---------- */
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 55; width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: #fff; background: #25D366;
+  box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .45); transition: transform .3s var(--ease-spring), background .2s;
+  animation: fadeUp .6s var(--ease-out) 1.6s both;
+}
+.wa-float::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; background: #25D366; z-index: -1;
+  animation: waPulse 2.4s ease-out 2.4s infinite;
+}
+.wa-float:hover { color: #fff; background: #1EBE5A; transform: translateY(-3px) scale(1.05); }
+@keyframes waPulse { from { transform: scale(1); opacity: .5; } to { transform: scale(1.7); opacity: 0; } }
+@media (max-width: 760px) { .wa-float { right: 14px; bottom: 14px; width: 52px; height: 52px; } }
+
 /* ---------- Reduced motion: show everything, move nothing ---------- */
 @media (prefers-reduced-motion: reduce) {
   .js .reveal, .js .reveal-zoom, .js .reveal-zoom > img, .js .map-anim .pin, .js .benefit .bicon { opacity: 1; transform: none; }

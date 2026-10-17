@@ -10,7 +10,7 @@
     newsletterEndpoint: '',   // e.g. 'https://api.example.com/subscribe' — receives POST {email}
     // Where Cash-on-Delivery orders are sent. Set at least one before launch:
     orderEndpoint: '',        // e.g. a Formspree / Google Apps Script / your API URL — receives POST JSON order
-    whatsappNumber: '',       // e.g. '919876543210' (country code + number, digits only) — customer can confirm on WhatsApp
+    whatsappNumber: '919744758625', // country code + number, digits only — orders are confirmed on this WhatsApp
     freeDeliveryThreshold: 999,
     deliveryFee: 49,          // charged below the free-delivery threshold
     serviceablePincodePrefix: '560', // Bengaluru; set '' to accept any 6-digit pincode
@@ -760,6 +760,10 @@
     ].join('\n');
   }
 
+  function waLink(order) {
+    return 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(whatsappText(order));
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     formAlert.hidden = true;
@@ -791,6 +795,12 @@
     };
 
     try { localStorage.setItem(CONFIG.customerKey, JSON.stringify(customer)); } catch (err) { /* ignore */ }
+
+    // Open WhatsApp right away (inside the click, so it isn't treated as a pop-up).
+    // The customer just presses "Send" to deliver the order to the shop.
+    if (!CONFIG.orderEndpoint && CONFIG.whatsappNumber) {
+      window.open(waLink(order), '_blank', 'noopener');
+    }
 
     var btn = $('[data-place]');
     var label = btn.textContent;
@@ -832,10 +842,15 @@
     $('[data-done-total]').textContent = inr(order.total);
     $('[data-done-address]').textContent = c.address + ', ' + c.area + ' ' + c.pincode;
     $('[data-done-slot]').textContent = order.slot;
-    $('[data-done-msg]').textContent = 'We’ll call you on +91 ' + c.phone + ' to confirm. Please keep ' + inr(order.total) + ' ready in cash.';
     var wa = $('[data-done-wa]');
+    var viaWhatsApp = !CONFIG.orderEndpoint && CONFIG.whatsappNumber;
+    $('[data-done-msg]').textContent = viaWhatsApp
+      ? 'Last step: press “Send” in WhatsApp so we receive your order. We’ll reply to confirm. Please keep ' + inr(order.total) + ' ready in cash.'
+      : 'We’ll call you on +91 ' + c.phone + ' to confirm. Please keep ' + inr(order.total) + ' ready in cash.';
+    $('.done-title').textContent = viaWhatsApp ? 'Almost done!' : 'Order placed!';
     if (CONFIG.whatsappNumber) {
-      wa.href = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(whatsappText(order));
+      wa.href = waLink(order);
+      $('[data-wa-label]').textContent = viaWhatsApp ? 'Send order on WhatsApp' : 'Message us on WhatsApp';
       wa.hidden = false;
     } else {
       wa.hidden = true;
