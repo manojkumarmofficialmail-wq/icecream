@@ -1,0 +1,10 @@
+{
+  "name": "KALIX Ice Cream",
+  "short_name": "KALIX",
+  "description": "Small-batch ice cream, slow-churned in Bengaluru.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9F1",
+  "theme_color": "#EEE5F6",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

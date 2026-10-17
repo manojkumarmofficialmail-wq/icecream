@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KALIX Ice Cream — Small-batch ice cream</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Instrument+Serif:ital@0;1&amp;family=Lilita+One&amp;display=swap">
+<style>
+body{margin:0;background:#FFF9F1}
+a{color:#54236B}a:hover{color:#281936}
+.kx{container-type:inline-size;container-name:kx;font-family:'Bricolage Grotesque',system-ui,sans-serif;color:#281936;background:#FFF9F1;overflow:hidden;-webkit-font-smoothing:antialiased}
+.kx *{box-sizing:border-box}
+.kx img{display:block;max-width:100%}
+.kx-wrap{max-width:1336px;margin:0 auto;padding-left:48px;padding-right:48px}
+.kx-logo{font-family:'Lilita One',system-ui,sans-serif;font-weight:400;line-height:.9;letter-spacing:.01em;text-decoration:none}
+.kx-serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.kx-eyebrow{margin:0 0 14px;font-weight:700;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase}
+.kx-h2{margin:0;font-size:clamp(36px,3.9cqw,54px);line-height:1.02;font-weight:700;letter-spacing:-.035em}
+.kx-h2 .kx-serif{font-size:1.12em}
+.kx-body{color:#51465E;font-size:17px;line-height:1.55}
+.kx-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font-family:inherit;font-weight:700;font-size:15.5px;text-decoration:none;cursor:pointer;border:1.5px solid #54236B;background:#54236B;color:#FFF9F1;transition:background .2s,color .2s,transform .2s,box-shadow .2s}
+.kx-btn:hover{background:#3E1752;border-color:#3E1752;color:#FFF9F1;transform:translateY(-1px);box-shadow:0 10px 22px -12px rgba(84,35,107,.7)}
+.kx-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.kx-btn-line{background:transparent;color:#281936;border-color:#281936}
+.kx-btn-line:hover{background:#281936;color:#FFF9F1;border-color:#281936}
+.kx-btn-light{background:#FFF9F1;color:#281936;border-color:#FFF9F1}
+.kx-btn-light:hover{background:#FFFFFF;color:#281936;border-color:#FFFFFF}
+.kx button:focus-visible,.kx a:focus-visible,.kx input:focus-visible{outline:3px solid #E8A13A;outline-offset:3px}
+.kx-announce{display:flex;justify-content:center;align-items:center;gap:8px;min-height:38px;padding:6px 16px;background:#281936;color:#FFF9F1;font-size:13.5px;font-weight:500}
+.kx-header{background:#FFF9F1;border-bottom:1px solid #ECE2F0;position:relative;z-index:10}
+.kx-nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
+.kx-navlinks{display:flex;gap:6px;align-items:center}
+.kx-navlink{color:#281936;text-decoration:none;font-weight:600;font-size:15px;padding:10px 14px;border-radius:999px;transition:background .2s}
+.kx-navlink:hover{background:#EEE5F6;color:#281936}
+.kx-icon{position:relative;width:48px;height:48px;border-radius:999px;border:none;background:transparent;color:#281936;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.kx-icon:hover{background:#EEE5F6}
+.kx-count{position:absolute;top:4px;right:2px;min-width:19px;height:19px;padding:0 5px;border-radius:10px;font-size:11px;font-weight:800;color:#FFF9F1;background:#54236B;display:flex;align-items:center;justify-content:center;border:2px solid #FFF9F1}
+.kx-menu-btn{display:none}
+.kx-mobile-menu{display:none}
+.kx-hero{background:#EEE5F6;position:relative;overflow:hidden}
+.kx-hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:24px;align-items:center;min-height:600px}
+.kx-h1{margin:0;font-size:clamp(46px,5.6cqw,80px);line-height:.98;font-weight:700;letter-spacing:-.045em}
+.kx-h1 .kx-serif{font-size:1.16em;color:#54236B;letter-spacing:-.02em}
+.kx-hero-img{position:relative;justify-self:end;width:100%;max-width:620px}
+.kx-hero-img img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain}
+.kx-fotm{position:absolute;right:-6px;top:58%;text-align:center;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#54236B}
+.kx-benefits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:26px 0}
+.kx-benefit{display:flex;align-items:center;gap:14px;padding:6px 24px}
+.kx-benefit + .kx-benefit{border-left:1px solid #E6DCEA}
+.kx-bicon{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.kx-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.kx-tabs{display:inline-flex;gap:4px;padding:5px;border-radius:999px;background:#EEE5F6;flex-wrap:wrap}
+.kx-tab{min-height:40px;padding:0 18px;border-radius:999px;border:none;font-family:inherit;font-weight:600;font-size:14.5px;cursor:pointer;transition:background .2s,color .2s}
+.kx-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.kx-card{height:100%;background:#FFFFFF;border:1px solid #ECE2F0;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.kx-card:hover{transform:translateY(-4px);box-shadow:0 24px 40px -26px rgba(40,25,54,.45)}
+.kx-card-art{aspect-ratio:1.18/1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.kx-card-art img{width:92%;height:92%;object-fit:contain;transition:transform .45s ease}
+.kx-card:hover .kx-card-art img{transform:scale(1.04)}
+.kx-card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:4px;flex-grow:1}
+.kx-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.kx-name{margin:0;font-size:19px;font-weight:700;letter-spacing:-.015em}
+.kx-price{margin:0;font-size:18px;font-weight:700}
+.kx-meta{margin:0;font-size:13.5px;color:#7A6E86}
+.kx-desc{margin:6px 0 0;font-size:15px;line-height:1.5;color:#51465E;flex-grow:1}
+.kx-cardact{margin-top:14px}
+.kx-add{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;border:1.5px solid #54236B;background:transparent;color:#54236B;transition:background .2s,color .2s}
+.kx-add:hover{background:#54236B;color:#FFF9F1}
+.kx-qty{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-radius:999px;background:#54236B;color:#FFF9F1;padding:0 4px}
+.kx-qbtn{width:42px;height:42px;border-radius:999px;border:none;background:transparent;color:#FFF9F1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.kx-qbtn:hover{background:rgba(255,255,255,.14)}
+.kx-build{background:#2E1A40;color:#FFF9F1;position:relative;overflow:hidden}
+.kx-build-in{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:center}
+.kx-cone{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:620px}
+.kx-cone::before{content:'';position:absolute;left:50%;top:48%;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(circle,rgba(232,161,58,.42) 0%,rgba(232,161,58,0) 64%)}
+.kx-cone img{position:relative;height:620px;width:auto;max-width:100%;object-fit:contain}
+.kx-caption{position:absolute;left:0;bottom:22px;font-size:13px;color:#BFAFD0}
+.kx-flavors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.kx-flavor{display:flex;align-items:center;gap:12px;min-height:58px;padding:6px 12px 6px 6px;border-radius:16px;border:1.5px solid transparent;background:#FFF9F1;color:#281936;font-family:inherit;font-weight:600;font-size:15px;text-align:left;cursor:pointer;transition:border-color .2s,transform .2s}
+.kx-flavor:hover{transform:translateY(-1px)}
+.kx-flavor:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.kx-thumb{width:46px;height:46px;border-radius:12px;overflow:hidden;flex:none}
+.kx-thumb img{width:100%;height:100%;object-fit:cover;object-position:78% 62%;transform:scale(1.7)}
+.kx-tick{width:26px;height:26px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;border:1.5px solid #B9A9C8}
+.kx-summary{margin-top:18px;background:#FFF9F1;color:#281936;border-radius:20px;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.kx-ghost{min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid #D8CCE2;background:transparent;color:#281936;font-family:inherit;font-weight:600;font-size:14px;cursor:pointer}
+.kx-ghost:hover{background:#EEE5F6}
+.kx-ghost:disabled{opacity:.4;cursor:not-allowed}
+.kx-story{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:64px;align-items:center}
+.kx-story-img{border-radius:0 28px 28px 0;overflow:hidden;height:560px}
+.kx-story-img img{width:100%;height:100%;object-fit:cover}
+.kx-steps{margin:26px 0 0;padding:0;list-style:none}
+.kx-steps li{display:grid;grid-template-columns:40px minmax(0,1fr) minmax(0,1.2fr);gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid #E6DCEA;font-size:15px}
+.kx-steps li:last-child{border-bottom:1px solid #E6DCEA}
+.kx-party{background:#F8E5CC}
+.kx-party-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;align-items:center}
+.kx-party-img img{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain}
+.kx-find{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.kx-field{display:flex;align-items:center;gap:6px;padding:5px 5px 5px 18px;border-radius:999px;border:1.5px solid #D8CCE2;background:#FFFFFF}
+.kx-field:focus-within{border-color:#54236B}
+.kx-input{flex:1 1 auto;min-width:0;min-height:44px;border:none;background:transparent;font-family:inherit;font-size:16px;color:#281936;outline:none}
+.kx-input::placeholder{color:#8C819A}
+.kx-stores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px;margin-top:22px}
+.kx-store{display:flex;gap:12px;align-items:flex-start;padding:12px;margin:0 -12px;border-radius:14px;border:none;background:transparent;font-family:inherit;text-align:left;color:#281936;cursor:pointer;transition:background .2s}
+.kx-store:hover{background:#F4EEF8}
+.kx-map{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:1.6/1;background:#EEE5F6;border:1px solid #E2D6EC}
+.kx-map svg{position:absolute;inset:0;width:100%;height:100%}
+.kx-pin{position:absolute;display:flex;align-items:center;gap:6px;transform:translate(-11px,-100%);font-size:13px;font-weight:600;color:#281936;white-space:nowrap}
+.kx-news{background:#EEE5F6}
+.kx-news-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.kx-foot{background:#2E1A40;color:#FFF9F1}
+.kx-foot-link{color:#D7CBE3;text-decoration:none;font-size:15px;display:inline-block;padding:6px 0}
+.kx-foot-link:hover{color:#FFFFFF}
+.kx-still *{animation:none !important;transition:none !important}
+@media (prefers-reduced-motion: reduce){.kx *{animation:none !important;transition:none !important}}
+@container kx (max-width: 1100px){
+  .kx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kx-navlinks{display:none}
+  .kx-menu-btn{display:inline-flex}
+  .kx-mobile-menu{display:flex}
+  .kx-benefits{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 0}
+  .kx-benefit:nth-child(3){border-left:none}
+}
+@container kx (max-width: 760px){
+  .kx-wrap{padding-left:20px;padding-right:20px}
+  .kx-hide-sm{display:none !important}
+  .kx-hero-in{grid-template-columns:minmax(0,1fr);min-height:0;gap:0;padding-top:40px}
+  .kx-hero-img{justify-self:center;max-width:420px;margin-top:8px}
+  .kx-fotm{display:none}
+  .kx-ctas{flex-direction:column;align-items:stretch}
+  .kx-ctas .kx-btn{width:100%}
+  .kx-benefits{grid-template-columns:repeat(4,minmax(0,1fr));padding:18px 0}
+  .kx-benefit{flex-direction:column;text-align:center;gap:8px;padding:4px 2px}
+  .kx-benefit + .kx-benefit{border-left:none}
+  .kx-benefit .kx-bsub{display:none}
+  .kx-benefit .kx-btitle{font-size:12.5px !important}
+  .kx-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+  .kx-card{flex-direction:row;border-radius:18px}
+  .kx-card:hover{transform:none}
+  .kx-card-art{width:40%;aspect-ratio:auto;flex:none}
+  .kx-card-art img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .kx-card-body{padding:14px 14px 14px 16px}
+  .kx-card-top{flex-direction:column;gap:2px}
+  .kx-desc{display:none}
+  .kx-cardact{margin-top:8px}
+  .kx-build-in{grid-template-columns:minmax(0,1fr);gap:8px}
+  .kx-cone{min-height:0;order:2}
+  .kx-cone img{height:380px}
+  .kx-cone::before{width:340px;height:340px;margin:-170px 0 0 -170px}
+  .kx-caption{position:static;text-align:center;width:100%}
+  .kx-build-copy{order:1}
+  .kx-build-ui{order:3}
+  .kx-flavors{gap:8px}
+  .kx-flavor{font-size:13.5px;gap:8px;padding:6px 8px 6px 6px}
+  .kx-thumb{width:38px;height:38px}
+  .kx-tick{width:22px;height:22px}
+  .kx-summary .kx-btn{width:100%}
+  .kx-story{grid-template-columns:minmax(0,1fr);gap:28px}
+  .kx-story-img{border-radius:0;height:280px}
+  .kx-story-copy{padding-left:20px;padding-right:20px}
+  .kx-steps li{grid-template-columns:32px minmax(0,1fr)}
+  .kx-steps li span:last-child{grid-column:2}
+  .kx-party-in{grid-template-columns:minmax(0,1fr);gap:0}
+  .kx-party-cta .kx-btn{width:100%}
+  .kx-find{grid-template-columns:minmax(0,1fr);gap:24px}
+  .kx-stores{grid-template-columns:minmax(0,1fr)}
+  .kx-news-in{grid-template-columns:minmax(0,1fr);gap:20px}
+  .kx-news-form{flex-direction:column;align-items:stretch !important;border-radius:20px !important;padding:12px !important;background:transparent !important;border:none !important}
+  .kx-news-form .kx-input{background:#FFFFFF;border:1.5px solid #D8CCE2;border-radius:999px;padding:0 18px}
+  .kx-foot-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  .kx-foot-brand{grid-column:1 / -1;text-align:center}
+}
+</style>
+</helmet>
+<div class="kx {{motionClass}}">
+
+<!-- ============ ANNOUNCEMENT + HEADER ============ -->
+<div class="kx-announce">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"></path><path d="m4.9 4.9 14.2 14.2"></path><path d="M2 12h20"></path><path d="m19.1 4.9-14.2 14.2"></path></svg>
+  <span>Small batches. Big flavor. Free cold delivery over ₹999.</span>
+</div>
+
+<header class="kx-header" id="top">
+  <nav class="kx-wrap kx-nav" aria-label="Main">
+    <a href="#top" class="kx-logo" style="font-size:38px;color:#2E1A40">KALIX</a>
+    <div class="kx-navlinks">
+      <a class="kx-navlink" href="#shop">Shop pints</a>
+      <a class="kx-navlink" href="#build">Build a cone</a>
+      <a class="kx-navlink" href="#story">Our story</a>
+      <a class="kx-navlink" href="#party">Party packs</a>
+      <a class="kx-navlink" href="#find">Find us</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <a class="kx-icon" href="#shop" aria-label="{{cartLabel}}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"></path><path d="M9 8a3 3 0 0 1 6 0"></path></svg>
+        <span class="kx-count">{{cartCount}}</span>
+      </a>
+      <a class="kx-btn kx-hide-sm" href="#shop" style="margin-left:6px;padding:0 22px">Order now</a>
+      <button class="kx-icon kx-menu-btn" aria-label="{{menuLabel}}" aria-expanded="{{menuExpanded}}" onClick="{{toggleMenu}}">
+        <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6 6 18"></path></svg>
+        </sc-if>
+        <sc-if value="{{menuClosed}}" hint-placeholder-val="{{ true }}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+        </sc-if>
+      </button>
+    </div>
+  </nav>
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="kx-wrap kx-mobile-menu" style="flex-direction:column;gap:2px;padding-top:4px;padding-bottom:20px">
+      <a class="kx-navlink" href="#shop" onClick="{{closeMenu}}" style="font-size:19px;padding:14px 12px">Shop pints</a>
+      <a class="kx-navlink" href="#build" onClick="{{closeMenu}}" style="font-size:19px;padding:14px 12px">Build a cone</a>
+      <a class="kx-navlink" href="#story" onClick="{{closeMenu}}" style="font-size:19px;padding:14px 12px">Our story</a>
+      <a class="kx-navlink" href="#party" onClick="{{closeMenu}}" style="font-size:19px;padding:14px 12px">Party packs</a>
+      <a class="kx-navlink" href="#find" onClick="{{closeMenu}}" style="font-size:19px;padding:14px 12px">Find us</a>
+      <a class="kx-btn" href="#shop" onClick="{{closeMenu}}" style="margin-top:10px">Order now</a>
+    </div>
+  </sc-if>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="kx-hero" aria-labelledby="kx-hero-h">
+  <div class="kx-wrap kx-hero-in">
+    <div style="padding:24px 0">
+      <p class="kx-eyebrow" style="color:#54236B">Small-batch ice cream</p>
+      <h1 id="kx-hero-h" class="kx-h1">Ice cream in<br><span class="kx-serif">full bloom.</span></h1>
+      <p class="kx-body" style="margin:24px 0 0;font-size:18px;max-width:440px">Real fruit, thoughtful craft and joyful flavors, slow-churned in small batches, from Bengaluru to your freezer.</p>
+      <div class="kx-ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
+        <a class="kx-btn" href="#shop">Shop pints
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+        </a>
+        <a class="kx-btn kx-btn-line" href="#find">Find a scoop bar</a>
+      </div>
+    </div>
+    <div class="kx-hero-img">
+      <img src="./assets/08fb23206ab1b7ab192c5cf410887b70.webp" width="1200" height="1200" alt="Ube Cloud pint beside an ube and pistachio waffle cone." loading="eager" fetchpriority="high">
+      <p class="kx-fotm">Ube Cloud<br><span style="display:block;width:28px;height:1.5px;background:#54236B;margin:12px auto"></span>Flavor of<br>the month</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section class="kx-wrap" aria-label="Why KALIX">
+  <div class="kx-benefits" style="border-bottom:1px solid #ECE2F0">
+    <div class="kx-benefit">
+      <span class="kx-bicon" style="background:#E3EFD6"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4E7A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14Z"></path><path d="M5 19 13 11"></path></svg></span>
+      <span><span class="kx-btitle" style="display:block;font-weight:700;font-size:15px">Real ingredients</span><span class="kx-bsub" style="display:block;font-size:13.5px;color:#7A6E86;margin-top:2px">Whole fruit, real milk and nuts.</span></span>
+    </div>
+    <div class="kx-benefit">
+      <span class="kx-bicon" style="background:#EEE5F6"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#54236B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12a2 2 0 1 1 2-2 4 4 0 1 1-4 4 6 6 0 1 1 6 6"></path></svg></span>
+      <span><span class="kx-btitle" style="display:block;font-weight:700;font-size:15px">Slow churned</span><span class="kx-bsub" style="display:block;font-size:13.5px;color:#7A6E86;margin-top:2px">Less air, more ice cream.</span></span>
+    </div>
+    <div class="kx-benefit">
+      <span class="kx-bicon" style="background:#E1EEF7"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#24628A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"></path><path d="m4.9 4.9 14.2 14.2"></path><path d="M2 12h20"></path><path d="m19.1 4.9-14.2 14.2"></path></svg></span>
+      <span><span class="kx-btitle" style="display:block;font-weight:700;font-size:15px">Delivered frozen</span><span class="kx-bsub" style="display:block;font-size:13.5px;color:#7A6E86;margin-top:2px">Insulated boxes, every order.</span></span>
+    </div>
+    <div class="kx-benefit">
+      <span class="kx-bicon" style="background:#F8E5CC"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A5A0E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9"></path><path d="M2 7h20v5H2z"></path><path d="M12 21V7"></path><path d="M12 7H8a2.5 2.5 0 1 1 0-5c3 0 4 5 4 5Z"></path><path d="M12 7h4a2.5 2.5 0 1 0 0-5c-3 0-4 5-4 5Z"></path></svg></span>
+      <span><span class="kx-btitle" style="display:block;font-weight:700;font-size:15px">Made to share</span><span class="kx-bsub" style="display:block;font-size:13.5px;color:#7A6E86;margin-top:2px">Party packs for any occasion.</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOP ============ -->
+<section id="shop" class="kx-wrap" style="padding-top:88px" aria-labelledby="kx-shop-h">
+  <div class="kx-head">
+    <div>
+      <p class="kx-eyebrow" style="color:#54236B">Shop pints</p>
+      <h2 id="kx-shop-h" class="kx-h2">Find your next <span class="kx-serif">favorite.</span></h2>
+    </div>
+    <div class="kx-tabs" role="group" aria-label="Filter flavors">
+      <sc-for list="{{filters}}" as="p" hint-placeholder-count="4">
+        <button class="kx-tab" aria-pressed="{{p.pressed}}" onClick="{{p.pick}}" style="background:{{p.bg}};color:{{p.fg}}">{{p.label}}</button>
+      </sc-for>
+    </div>
+  </div>
+  <p role="status" style="margin:14px 0 0;font-size:14px;color:#7A6E86">{{filterNote}}</p>
+
+  <div class="kx-grid" style="margin-top:22px">
+    <sc-if value="{{show.ube}}" hint-placeholder-val="{{ true }}">
+      <article class="kx-card">
+        <div class="kx-card-art" style="background:#EEE5F6"><img src="./assets/c4a80ad33412449e7ba56a6466d4c39a.webp" width="760" height="760" loading="lazy" alt="Ube Cloud pint with purple yam ice cream, toasted rice and coconut."></div>
+        <div class="kx-card-body">
+          <div class="kx-card-top"><h3 class="kx-name">Ube Cloud</h3><p class="kx-price">₹449</p></div>
+          <p class="kx-meta">500 ml · Vegan</p>
+          <p class="kx-desc">Purple yam and coconut milk with a toasted rice crunch. Our signature.</p>
+          <div class="kx-cardact">
+            <sc-if value="{{c.ube.none}}" hint-placeholder-val="{{ true }}"><button class="kx-add" onClick="{{c.ube.inc}}" aria-label="Add Ube Cloud to cart">Add to cart <span aria-hidden="true">+</span></button></sc-if>
+            <sc-if value="{{c.ube.some}}" hint-placeholder-val="{{ false }}"><div class="kx-qty"><button class="kx-qbtn" onClick="{{c.ube.dec}}" aria-label="Remove one Ube Cloud">−</button><span role="status" style="font-weight:700;font-size:15px">{{c.ube.label}}</span><button class="kx-qbtn" onClick="{{c.ube.inc}}" aria-label="Add one more Ube Cloud">+</button></div></sc-if>
+          </div>
+        </div>
+      </article>
+    </sc-if>
+    <sc-if value="{{show.pistachio}}" hint-placeholder-val="{{ true }}">
+      <article class="kx-card">
+        <div class="kx-card-art" style="background:#EAF0DE"><img src="./assets/f1ccd4165d43e1c18faedce43c0a3abc.webp" width="760" height="760" loading="lazy" alt="Pistachio Rose pint with pistachio ice cream and rose jam ribbons."></div>
+        <div class="kx-card-body">
+          <div class="kx-card-top"><h3 class="kx-name">Pistachio Rose</h3><p class="kx-price">₹449</p></div>
+          <p class="kx-meta">500 ml · Contains nuts</p>
+          <p class="kx-desc">Slow-roasted pistachio folded with rose petal jam and sea salt.</p>
+          <div class="kx-cardact">
+            <sc-if value="{{c.pistachio.none}}" hint-placeholder-val="{{ true }}"><button class="kx-add" onClick="{{c.pistachio.inc}}" aria-label="Add Pistachio Rose to cart">Add to cart <span aria-hidden="true">+</span></button></sc-if>
+            <sc-if value="{{c.pistachio.some}}" hint-placeholder-val="{{ false }}"><div class="kx-qty"><button class="kx-qbtn" onClick="{{c.pistachio.dec}}" aria-label="Remove one Pistachio Rose">−</button><span role="status" style="font-weight:700;font-size:15px">{{c.pistachio.label}}</span><button class="kx-qbtn" onClick="{{c.pistachio.inc}}" aria-label="Add one more Pistachio Rose">+</button></div></sc-if>
+          </div>
+        </div>
+      </article>
+    </sc-if>
+    <sc-if value="{{show.mango}}" hint-placeholder-val="{{ true }}">
+      <article class="kx-card">
+        <div class="kx-card-art" style="background:#F8E5CC"><img src="./assets/138cafb02e5bdd459686e4ad92a90300.webp" width="760" height="760" loading="lazy" alt="Mango Chili Pop pint with mango sorbet, lime and chili."></div>
+        <div class="kx-card-body">
+          <div class="kx-card-top"><h3 class="kx-name">Mango Chili Pop</h3><p class="kx-price">₹449</p></div>
+          <p class="kx-meta">500 ml · Vegan</p>
+          <p class="kx-desc">Alphonso mango sorbet with Kashmiri chili and lime. Sweet, then spicy.</p>
+          <div class="kx-cardact">
+            <sc-if value="{{c.mango.none}}" hint-placeholder-val="{{ true }}"><button class="kx-add" onClick="{{c.mango.inc}}" aria-label="Add Mango Chili Pop to cart">Add to cart <span aria-hidden="true">+</span></button></sc-if>
+            <sc-if value="{{c.mango.some}}" hint-placeholder-val="{{ false }}"><div class="kx-qty"><button class="kx-qbtn" onClick="{{c.mango.dec}}" aria-label="Remove one Mango Chili Pop">−</button><span role="status" style="font-weight:700;font-size:15px">{{c.mango.label}}</span><button class="kx-qbtn" onClick="{{c.mango.inc}}" aria-label="Add one more Mango Chili Pop">+</button></div></sc-if>
+          </div>
+        </div>
+      </article>
+    </sc-if>
+    <sc-if value="{{show.blackberry}}" hint-placeholder-val="{{ true }}">
+      <article class="kx-card">
+        <div class="kx-card-art" style="background:#EBDDF1"><img src="./assets/46d2c80756fc5b3d618293a87ccc00cd.webp" width="760" height="760" loading="lazy" alt="Midnight Blackberry pint with vanilla cheesecake ice cream, blackberry ripple and biscuit crumbs."></div>
+        <div class="kx-card-body">
+          <div class="kx-card-top"><h3 class="kx-name">Midnight Blackberry</h3><p class="kx-price">₹449</p></div>
+          <p class="kx-meta">500 ml · Contains gluten</p>
+          <p class="kx-desc">Blackberry ripple through vanilla cheesecake with biscuit crumble.</p>
+          <div class="kx-cardact">
+            <sc-if value="{{c.blackberry.none}}" hint-placeholder-val="{{ true }}"><button class="kx-add" onClick="{{c.blackberry.inc}}" aria-label="Add Midnight Blackberry to cart">Add to cart <span aria-hidden="true">+</span></button></sc-if>
+            <sc-if value="{{c.blackberry.some}}" hint-placeholder-val="{{ false }}"><div class="kx-qty"><button class="kx-qbtn" onClick="{{c.blackberry.dec}}" aria-label="Remove one Midnight Blackberry">−</button><span role="status" style="font-weight:700;font-size:15px">{{c.blackberry.label}}</span><button class="kx-qbtn" onClick="{{c.blackberry.inc}}" aria-label="Add one more Midnight Blackberry">+</button></div></sc-if>
+          </div>
+        </div>
+      </article>
+    </sc-if>
+    <sc-if value="{{show.jaggery}}" hint-placeholder-val="{{ true }}">
+      <article class="kx-card">
+        <div class="kx-card-art" style="background:#F3E6D6"><img src="./assets/8b14e1136d0ff37cad1b3f2292537ef7.webp" width="760" height="760" loading="lazy" alt="Salted Jaggery pint with caramel ice cream, jaggery pieces and salt flakes."></div>
+        <div class="kx-card-body">
+          <div class="kx-card-top"><h3 class="kx-name">Salted Jaggery</h3><p class="kx-price">₹449</p></div>
+          <p class="kx-meta">500 ml · Vegetarian</p>
+          <p class="kx-desc">Jaggery caramel and brown butter with ribbons of flaky salt.</p>
+          <div class="kx-cardact">
+            <sc-if value="{{c.jaggery.none}}" hint-placeholder-val="{{ true }}"><button class="kx-add" onClick="{{c.jaggery.inc}}" aria-label="Add Salted Jaggery to cart">Add to cart <span aria-hidden="true">+</span></button></sc-if>
+            <sc-if value="{{c.jaggery.some}}" hint-placeholder-val="{{ false }}"><div class="kx-qty"><button class="kx-qbtn" onClick="{{c.jaggery.dec}}" aria-label="Remove one Salted Jaggery">−</button><span role="status" style="font-weight:700;font-size:15px">{{c.jaggery.label}}</span><button class="kx-qbtn" onClick="{{c.jaggery.inc}}" aria-label="Add one more Salted Jaggery">+</button></div></sc-if>
+          </div>
+        </div>
+      </article>
+    </sc-if>
+    <sc-if value="{{show.strawberry}}" hint-placeholder-val="{{ true }}">
+      <article class="kx-card">
+        <div class="kx-card-art" style="background:#FBE1E6"><img src="./assets/d41084cd6c84ea4c9c76dbe84ea7b8d4.webp" width="760" height="760" loading="lazy" alt="Strawberry Lychee pint with pink sorbet, strawberry and lychee fruit."></div>
+        <div class="kx-card-body">
+          <div class="kx-card-top"><h3 class="kx-name">Strawberry Lychee</h3><p class="kx-price">₹449</p></div>
+          <p class="kx-meta">500 ml · Vegan</p>
+          <p class="kx-desc">Strawberry and lychee with a popping-candy sparkle.</p>
+          <div class="kx-cardact">
+            <sc-if value="{{c.strawberry.none}}" hint-placeholder-val="{{ true }}"><button class="kx-add" onClick="{{c.strawberry.inc}}" aria-label="Add Strawberry Lychee to cart">Add to cart <span aria-hidden="true">+</span></button></sc-if>
+            <sc-if value="{{c.strawberry.some}}" hint-placeholder-val="{{ false }}"><div class="kx-qty"><button class="kx-qbtn" onClick="{{c.strawberry.dec}}" aria-label="Remove one Strawberry Lychee">−</button><span role="status" style="font-weight:700;font-size:15px">{{c.strawberry.label}}</span><button class="kx-qbtn" onClick="{{c.strawberry.inc}}" aria-label="Add one more Strawberry Lychee">+</button></div></sc-if>
+          </div>
+        </div>
+      </article>
+    </sc-if>
+  </div>
+</section>
+
+<!-- ============ BUILD A CONE ============ -->
+<section id="build" class="kx-build" style="margin-top:96px" aria-labelledby="kx-build-h">
+  <div class="kx-wrap kx-build-in" style="padding-top:72px;padding-bottom:72px">
+    <div class="kx-cone">
+      <img src="./assets/efd86f6466507bc21b014e2c299c9b6d.webp" width="900" height="1350" loading="lazy" alt="Waffle cone with pistachio, strawberry and ube scoops.">
+      <p class="kx-caption">Pictured: Ube Cloud, Strawberry Lychee and Pistachio Rose</p>
+    </div>
+    <div>
+      <div class="kx-build-copy">
+        <p class="kx-eyebrow" style="color:#CDB8E6">Build your own</p>
+        <h2 id="kx-build-h" class="kx-h2" style="color:#FFF9F1">A little more <span class="kx-serif">you.</span></h2>
+        <p style="margin:16px 0 26px;font-size:17px;line-height:1.55;color:#D7CBE3;max-width:440px">Three scoops. Endless combinations. Build a cone that's entirely your flavor, ready at any scoop bar.</p>
+      </div>
+      <div class="kx-build-ui">
+        <div class="kx-flavors" role="group" aria-label="Choose up to three scoops">
+          <button class="kx-flavor" onClick="{{pick.ube.toggle}}" aria-pressed="{{pick.ube.pressed}}" disabled="{{pick.ube.disabled}}" style="border-color:{{pick.ube.border}}">
+            <span class="kx-thumb" style="background:#EEE5F6"><img src="./assets/c4a80ad33412449e7ba56a6466d4c39a.webp" width="760" height="760" alt=""></span>
+            <span style="flex-grow:1">Ube Cloud</span>
+            <span class="kx-tick" style="background:{{pick.ube.tickBg}};border-color:{{pick.ube.tickBorder}};color:#FFF9F1">{{pick.ube.mark}}</span>
+          </button>
+          <button class="kx-flavor" onClick="{{pick.mango.toggle}}" aria-pressed="{{pick.mango.pressed}}" disabled="{{pick.mango.disabled}}" style="border-color:{{pick.mango.border}}">
+            <span class="kx-thumb" style="background:#F8E5CC"><img src="./assets/138cafb02e5bdd459686e4ad92a90300.webp" width="760" height="760" alt=""></span>
+            <span style="flex-grow:1">Mango Chili Pop</span>
+            <span class="kx-tick" style="background:{{pick.mango.tickBg}};border-color:{{pick.mango.tickBorder}};color:#FFF9F1">{{pick.mango.mark}}</span>
+          </button>
+          <button class="kx-flavor" onClick="{{pick.pistachio.toggle}}" aria-pressed="{{pick.pistachio.pressed}}" disabled="{{pick.pistachio.disabled}}" style="border-color:{{pick.pistachio.border}}">
+            <span class="kx-thumb" style="background:#EAF0DE"><img src="./assets/f1ccd4165d43e1c18faedce43c0a3abc.webp" width="760" height="760" alt=""></span>
+            <span style="flex-grow:1">Pistachio Rose</span>
+            <span class="kx-tick" style="background:{{pick.pistachio.tickBg}};border-color:{{pick.pistachio.tickBorder}};color:#FFF9F1">{{pick.pistachio.mark}}</span>
+          </button>
+          <button class="kx-flavor" onClick="{{pick.jaggery.toggle}}" aria-pressed="{{pick.jaggery.pressed}}" disabled="{{pick.jaggery.disabled}}" style="border-color:{{pick.jaggery.border}}">
+            <span class="kx-thumb" style="background:#F3E6D6"><img src="./assets/8b14e1136d0ff37cad1b3f2292537ef7.webp" width="760" height="760" alt=""></span>
+            <span style="flex-grow:1">Salted Jaggery</span>
+            <span class="kx-tick" style="background:{{pick.jaggery.tickBg}};border-color:{{pick.jaggery.tickBorder}};color:#FFF9F1">{{pick.jaggery.mark}}</span>
+          </button>
+          <button class="kx-flavor" onClick="{{pick.blackberry.toggle}}" aria-pressed="{{pick.blackberry.pressed}}" disabled="{{pick.blackberry.disabled}}" style="border-color:{{pick.blackberry.border}}">
+            <span class="kx-thumb" style="background:#EBDDF1"><img src="./assets/46d2c80756fc5b3d618293a87ccc00cd.webp" width="760" height="760" alt=""></span>
+            <span style="flex-grow:1">Midnight Blackberry</span>
+            <span class="kx-tick" style="background:{{pick.blackberry.tickBg}};border-color:{{pick.blackberry.tickBorder}};color:#FFF9F1">{{pick.blackberry.mark}}</span>
+          </button>
+          <button class="kx-flavor" onClick="{{pick.strawberry.toggle}}" aria-pressed="{{pick.strawberry.pressed}}" disabled="{{pick.strawberry.disabled}}" style="border-color:{{pick.strawberry.border}}">
+            <span class="kx-thumb" style="background:#FBE1E6"><img src="./assets/d41084cd6c84ea4c9c76dbe84ea7b8d4.webp" width="760" height="760" alt=""></span>
+            <span style="flex-grow:1">Strawberry Lychee</span>
+            <span class="kx-tick" style="background:{{pick.strawberry.tickBg}};border-color:{{pick.strawberry.tickBorder}};color:#FFF9F1">{{pick.strawberry.mark}}</span>
+          </button>
+        </div>
+        <p role="status" style="margin:12px 0 0;min-height:22px;font-size:14px;color:#E8C48A">{{limitNote}}</p>
+
+        <div class="kx-summary">
+          <div style="display:flex;align-items:center;gap:14px;min-width:0;flex:1 1 260px">
+            <span style="width:48px;height:48px;border-radius:50%;background:#F8E5CC;display:flex;align-items:center;justify-content:center;flex:none">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A5A0E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10a5 5 0 0 1 10 0"></path><path d="M6 10h12l-6 12Z"></path></svg>
+            </span>
+            <div style="min-width:0">
+              <p style="margin:0;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9A5A0E">Your cone</p>
+              <p style="margin:2px 0 0;font-size:18px;font-weight:700">{{coneHeadline}}</p>
+              <p style="margin:2px 0 0;font-size:14px;color:#51465E">{{coneNames}}</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <button class="kx-ghost" onClick="{{undo}}" disabled="{{empty}}">Undo</button>
+            <button class="kx-ghost" onClick="{{clear}}" disabled="{{empty}}">Clear</button>
+            <button class="kx-btn" onClick="{{addCone}}" disabled="{{empty}}">Add to cart</button>
+          </div>
+          <sc-if value="{{coneAdded}}" hint-placeholder-val="{{ false }}">
+            <p role="status" style="margin:0;width:100%;font-size:14px;font-weight:600;color:#3F6B1F">Cone added. Your cart has {{cartCount}} items.</p>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story" style="padding-top:0" aria-labelledby="kx-story-h">
+  <div class="kx-story">
+    <div class="kx-story-img">
+      <img src="./assets/6c246730f1e898e6b33b457a07e264cb.webp" width="1400" height="1050" loading="lazy" alt="A metal scoop lifting ube ice cream from a small-batch gelato pan.">
+    </div>
+    <div class="kx-story-copy" style="max-width:540px;padding-top:48px;padding-bottom:48px">
+      <p class="kx-eyebrow" style="color:#54236B">Our roots</p>
+      <h2 id="kx-story-h" class="kx-h2">Good things take<br><span class="kx-serif">a little time.</span></h2>
+      <p class="kx-body" style="margin:18px 0 0">KALIX is named after the calyx, the small green cup that holds a flower while it blooms. We think a cone does the same for ice cream. So we pick fruit at its peak and slow-churn it in small batches to bring out real, honest flavor.</p>
+      <ol class="kx-steps">
+        <li><span style="font-weight:700;color:#54236B">01</span><span style="font-weight:700">Picked at peak</span><span style="color:#51465E">Fruit at its freshest, always.</span></li>
+        <li><span style="font-weight:700;color:#54236B">02</span><span style="font-weight:700">Churned slow</span><span style="color:#51465E">A creamier, richer scoop.</span></li>
+        <li><span style="font-weight:700;color:#54236B">03</span><span style="font-weight:700">Made in small batches</span><span style="color:#51465E">Because flavor takes time.</span></li>
+      </ol>
+      <a class="kx-btn" href="#find" style="margin-top:28px">Meet KALIX
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTY PACK ============ -->
+<section id="party" class="kx-party" aria-labelledby="kx-party-h">
+  <div class="kx-wrap kx-party-in" style="padding-top:48px;padding-bottom:40px">
+    <div class="kx-party-cta" style="padding:24px 0">
+      <p class="kx-eyebrow" style="color:#9A5A0E">Party packs</p>
+      <h2 id="kx-party-h" class="kx-h2">Good things<br><span class="kx-serif">come in fours.</span></h2>
+      <p class="kx-body" style="margin:14px 0 0">Four pints, one very good evening. Pick any four flavors, packed in an insulated tote with spoons and a note.</p>
+      <p style="margin:18px 0 0;font-size:34px;font-weight:800;letter-spacing:-.02em">₹1,599 <span style="font-size:15px;font-weight:500;color:#51465E;letter-spacing:0">for 4 pints</span></p>
+      <a class="kx-btn" href="#shop" style="margin-top:22px">Build a party pack
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+      </a>
+    </div>
+    <div class="kx-party-img">
+      <img src="./assets/1e3c4db0085231797e6c43977ec265ef.webp" width="1300" height="975" loading="lazy" alt="Four KALIX pints with an insulated tote, wooden spoons and a gift card.">
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIND US ============ -->
+<section id="find" class="kx-wrap" style="padding-top:88px;padding-bottom:88px" aria-labelledby="kx-find-h">
+  <div class="kx-find">
+    <div>
+      <p class="kx-eyebrow" style="color:#54236B">Find us</p>
+      <h2 id="kx-find-h" class="kx-h2">Your neighborhood <span class="kx-serif">scoop.</span></h2>
+      <p class="kx-body" style="margin:14px 0 22px">Drop by for a taste. Find KALIX scoop bars across Bengaluru.</p>
+      <form onSubmit="{{onFind}}" style="margin:0">
+        <label for="kx-where" style="display:block;font-weight:600;font-size:14px;margin-bottom:8px">Search by area or landmark</label>
+        <div class="kx-field">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A6E86" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <input id="kx-where" class="kx-input" type="text" placeholder="e.g. Koramangala" value="{{query}}" onChange="{{onQuery}}">
+          <button type="submit" class="kx-btn" style="min-height:44px">Search</button>
+        </div>
+      </form>
+      <p role="status" style="margin:14px 0 0;font-size:14px;color:#7A6E86">{{storeNote}}</p>
+      <div class="kx-stores">
+        <sc-for list="{{stores}}" as="st" hint-placeholder-count="4">
+          <button class="kx-store" onClick="{{st.pick}}" aria-pressed="{{st.pressed}}" style="background:{{st.bg}}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#54236B" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"></path><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"></circle></svg>
+            <span><span style="display:block;font-weight:700;font-size:16px">{{st.name}}</span><span style="display:block;font-size:14px;color:#51465E;margin-top:2px">{{st.area}} · {{st.hours}}</span></span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+    <div>
+      <p style="margin:0 0 10px;text-align:right;font-size:13px;color:#7A6E86">Bengaluru · Demo locations</p>
+      <div class="kx-map" role="img" aria-label="{{mapLabel}}">
+        <svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="640" height="400" fill="#EEE5F6"></rect>
+          <path d="M0 110 L640 70 M0 250 C200 230 420 280 640 220 M180 0 L230 400 M430 0 L380 400 M0 330 L640 300 M60 0 L120 400 M540 0 L600 400" stroke="#FFFFFF" stroke-width="9" fill="none"></path>
+          <path d="M0 40 L320 160 L640 120 M300 0 L280 400 M0 180 H640" stroke="#FFFFFF" stroke-width="4" fill="none" opacity=".8"></path>
+          <path d="M120 60 L200 130 M480 280 L600 360 M250 310 L340 360" stroke="#DCCFEA" stroke-width="3" fill="none"></path>
+        </svg>
+        <sc-for list="{{pins}}" as="pn" hint-placeholder-count="4">
+          <span class="kx-pin" style="left:{{pn.x}}%;top:{{pn.y}}%">
+            <svg width="{{pn.size}}" height="{{pn.size}}" viewBox="0 0 24 24" fill="{{pn.color}}" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"></path><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"></circle></svg>
+            <span style="padding:3px 8px;border-radius:8px;background:{{pn.labelBg}}">{{pn.name}}</span>
+          </span>
+        </sc-for>
+        <span style="position:absolute;left:14px;bottom:12px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6E86">Illustrative map</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="kx-news" aria-labelledby="kx-news-h">
+  <div class="kx-wrap kx-news-in" style="padding-top:48px;padding-bottom:48px">
+    <div>
+      <h2 id="kx-news-h" class="kx-h2" style="font-size:clamp(32px,3.2cqw,44px)">Fresh flavors. <span class="kx-serif">First dibs.</span></h2>
+      <p class="kx-body" style="margin:8px 0 0;font-size:16px">Join our list for seasonal drops, events and more.</p>
+    </div>
+    <div>
+      <form onSubmit="{{onSubscribe}}" style="margin:0">
+        <label for="kx-email" style="display:block;font-weight:600;font-size:14px;margin-bottom:8px">Your email address</label>
+        <div class="kx-field kx-news-form">
+          <input id="kx-email" class="kx-input" type="email" placeholder="name@email.com" value="{{email}}" onChange="{{onEmail}}" autocomplete="email">
+          <button type="submit" class="kx-btn" style="min-height:44px">Subscribe</button>
+        </div>
+      </form>
+      <p role="status" style="margin:10px 0 0;min-height:20px;font-size:14px;color:{{newsColor}}">{{newsNote}}</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="kx-foot">
+  <div class="kx-wrap" style="padding-top:56px;padding-bottom:28px">
+    <div class="kx-foot-grid" style="display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:32px">
+      <div class="kx-foot-brand">
+        <a href="#top" class="kx-logo" style="font-size:52px;color:#FFF9F1">KALIX</a>
+        <p style="margin:6px 0 0;font-size:12px;font-weight:700;letter-spacing:.3em;color:#CDB8E6">ICE CREAM</p>
+        <p style="margin:14px 0 0;font-size:15px;color:#D7CBE3">Small-batch ice cream. Big little joys.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 8px;font-size:14px;font-weight:700">Shop</p>
+        <a class="kx-foot-link" href="#shop" style="display:block">All pints</a>
+        <a class="kx-foot-link" href="#build" style="display:block">Build a cone</a>
+        <a class="kx-foot-link" href="#party" style="display:block">Party packs</a>
+      </div>
+      <div>
+        <p style="margin:0 0 8px;font-size:14px;font-weight:700">Company</p>
+        <a class="kx-foot-link" href="#story" style="display:block">Our story</a>
+        <a class="kx-foot-link" href="#find" style="display:block">Find us</a>
+        <a class="kx-foot-link" href="#top" style="display:block">Careers</a>
+      </div>
+      <div>
+        <p style="margin:0 0 8px;font-size:14px;font-weight:700">Help</p>
+        <a class="kx-foot-link" href="#top" style="display:block">Contact</a>
+        <a class="kx-foot-link" href="#top" style="display:block">FAQs</a>
+        <a class="kx-foot-link" href="#top" style="display:block">Shipping &amp; returns</a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14)">
+      <div style="display:flex;gap:4px">
+        <a href="#top" class="kx-icon" aria-label="KALIX on Instagram" style="color:#FFF9F1">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
+        </a>
+        <a href="#top" class="kx-icon" aria-label="KALIX on Facebook" style="color:#FFF9F1">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h2.5l.5-4h-3V7a1 1 0 0 1 1-1h2Z"></path></svg>
+        </a>
+        <a href="#top" class="kx-icon" aria-label="KALIX on YouTube" style="color:#FFF9F1">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"></rect><path d="m10 9 5 3-5 3Z"></path></svg>
+        </a>
+      </div>
+      <span style="font-size:13.5px;color:#BFAFD0">© 2026 KALIX. Fictional brand concept.</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"motion":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'all', cart: {}, scoops: ['ube', 'strawberry', 'pistachio'], cones: 0, coneAdded: false, menuOpen: false, query: '', store: 'indiranagar', email: '', newsState: '' };
+  }
+  catalog() {
+    return {
+      ube: { name: 'Ube Cloud', cats: ['creamy', 'vegan'] },
+      pistachio: { name: 'Pistachio Rose', cats: ['creamy'] },
+      mango: { name: 'Mango Chili Pop', cats: ['fruity', 'vegan'] },
+      blackberry: { name: 'Midnight Blackberry', cats: ['fruity', 'creamy'] },
+      jaggery: { name: 'Salted Jaggery', cats: ['creamy'] },
+      strawberry: { name: 'Strawberry Lychee', cats: ['fruity', 'vegan'] }
+    };
+  }
+  setQty(id, delta) {
+    const cart = Object.assign({}, this.state.cart);
+    const next = Math.max(0, (cart[id] || 0) + delta);
+    if (next === 0) { delete cart[id]; } else { cart[id] = next; }
+    this.setState({ cart: cart });
+  }
+  renderVals() {
+    const s = this.state;
+    const motion = this.props.motion ?? true;
+    const cat = this.catalog();
+    const ids = Object.keys(cat);
+
+    const filters = [
+      { id: 'all', label: 'All' }, { id: 'fruity', label: 'Fruity' }, { id: 'creamy', label: 'Creamy' }, { id: 'vegan', label: 'Vegan' }
+    ].map((p) => {
+      const on = s.filter === p.id;
+      return { label: p.label, bg: on ? '#54236B' : 'transparent', fg: on ? '#FFF9F1' : '#281936', pressed: on ? 'true' : 'false', pick: () => this.setState({ filter: p.id }) };
+    });
+    const show = {};
+    let shownCount = 0;
+    ids.forEach((id) => { show[id] = s.filter === 'all' || cat[id].cats.indexOf(s.filter) > -1; if (show[id]) { shownCount++; } });
+    const filterNote = s.filter === 'all' ? 'All 6 flavors · 500 ml pints · ₹449 each' : ('Showing ' + shownCount + ' ' + s.filter + ' flavors');
+
+    const c = {};
+    let pints = 0;
+    ids.forEach((id) => {
+      const q = s.cart[id] || 0;
+      pints += q;
+      c[id] = { none: q === 0, some: q > 0, label: q + ' in cart', inc: () => this.setQty(id, 1), dec: () => this.setQty(id, -1) };
+    });
+    const cartCount = pints + s.cones;
+
+    const full = s.scoops.length >= 3;
+    const pick = {};
+    ids.forEach((id) => {
+      const on = s.scoops.indexOf(id) > -1;
+      pick[id] = {
+        pressed: on ? 'true' : 'false',
+        disabled: full && !on,
+        border: on ? '#E8A13A' : 'transparent',
+        tickBg: on ? '#54236B' : 'transparent',
+        tickBorder: on ? '#54236B' : '#B9A9C8',
+        mark: on ? String(s.scoops.indexOf(id) + 1) : '',
+        toggle: () => {
+          const cur = this.state.scoops;
+          if (cur.indexOf(id) > -1) { this.setState({ scoops: cur.filter((x) => x !== id), coneAdded: false }); }
+          else if (cur.length < 3) { this.setState({ scoops: cur.concat([id]), coneAdded: false }); }
+        }
+      };
+    });
+    const n = s.scoops.length;
+    const empty = n === 0;
+    const coneHeadline = empty ? 'No scoops yet' : (n + (n === 1 ? ' scoop' : ' scoops') + ' · ₹' + (n * 149));
+    const coneNames = empty ? 'Pick up to three flavors.' : s.scoops.map((id, i) => (i + 1) + '. ' + cat[id].name).join('   ');
+    const limitNote = full ? 'Three scoops is the max. Tap a picked flavor to swap it out.' : (empty ? '' : ('₹149 per scoop · ' + (3 - n) + ' more to go'));
+
+    const storesAll = [
+      { id: 'indiranagar', name: 'Indiranagar', area: '100 Feet Road', hours: 'till 11:30 pm', x: 54, y: 24 },
+      { id: 'koramangala', name: 'Koramangala', area: '5th Block', hours: 'till midnight', x: 66, y: 56 },
+      { id: 'jayanagar', name: 'Jayanagar', area: '4th Block', hours: 'till 11 pm', x: 46, y: 82 },
+      { id: 'whitefield', name: 'Whitefield', area: 'ITPL Main Road', hours: 'till 10 pm', x: 18, y: 60 }
+    ];
+    const q = (s.query || '').trim().toLowerCase();
+    let list = q ? storesAll.filter((x) => (x.name + ' ' + x.area).toLowerCase().indexOf(q) > -1) : storesAll;
+    const none = !!q && list.length === 0;
+    if (none) { list = storesAll; }
+    const storeNote = none ? ('No scoop bar matches “' + s.query.trim() + '” yet. Here are all four.') : (q ? (list.length + ' match' + (list.length === 1 ? '' : 'es') + ' for “' + s.query.trim() + '”') : '4 demo scoop bars in Bengaluru');
+    const sel = list.some((x) => x.id === s.store) ? s.store : list[0].id;
+    const stores = list.map((x) => Object.assign({}, x, {
+      pressed: x.id === sel ? 'true' : 'false',
+      bg: x.id === sel ? '#F1E9F7' : 'transparent',
+      pick: () => this.setState({ store: x.id })
+    }));
+    const pins = storesAll.map((x) => ({
+      name: x.name, x: x.x, y: x.y,
+      color: x.id === sel ? '#E8A13A' : '#54236B',
+      size: x.id === sel ? '30' : '24',
+      labelBg: x.id === sel ? '#FFFFFF' : 'transparent'
+    }));
+    const selStore = storesAll.filter((x) => x.id === sel)[0];
+
+    const newsNote = s.newsState === 'ok' ? 'Thanks! This is a demo page, so no email was actually sent.' : (s.newsState === 'bad' ? 'Please enter a valid email address.' : '');
+
+    return {
+      motionClass: motion ? '' : 'kx-still',
+      cartCount: cartCount,
+      cartLabel: 'Cart, ' + cartCount + (cartCount === 1 ? ' item' : ' items'),
+      menuOpen: s.menuOpen,
+      menuClosed: !s.menuOpen,
+      menuExpanded: s.menuOpen ? 'true' : 'false',
+      menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      filters: filters,
+      filterNote: filterNote,
+      show: show,
+      c: c,
+      pick: pick,
+      empty: empty,
+      coneHeadline: coneHeadline,
+      coneNames: coneNames,
+      limitNote: limitNote,
+      coneAdded: s.coneAdded,
+      undo: () => this.setState({ scoops: this.state.scoops.slice(0, -1), coneAdded: false }),
+      clear: () => this.setState({ scoops: [], coneAdded: false }),
+      addCone: () => { if (this.state.scoops.length) { this.setState({ cones: this.state.cones + 1, coneAdded: true }); } },
+      query: s.query,
+      onQuery: (e) => this.setState({ query: e.target.value }),
+      onFind: (e) => { if (e && e.preventDefault) { e.preventDefault(); } },
+      storeNote: storeNote,
+      stores: stores,
+      pins: pins,
+      mapLabel: 'Illustrative map of four demo KALIX scoop bars in Bengaluru. Selected: ' + selStore.name + ', ' + selStore.area,
+      email: s.email,
+      onEmail: (e) => this.setState({ email: e.target.value, newsState: '' }),
+      onSubscribe: (e) => { if (e && e.preventDefault) { e.preventDefault(); } const v = (this.state.email || '').trim(); this.setState({ newsState: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? 'ok' : 'bad' }); },
+      newsNote: newsNote,
+      newsColor: s.newsState === 'bad' ? '#A3243F' : '#3F6B1F'
+    };
+  }
+}
+</script>
+</body>
+</html>

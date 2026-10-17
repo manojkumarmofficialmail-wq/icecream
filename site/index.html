@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KALIX Ice Cream — Small-batch ice cream from Bengaluru</title>
+  <meta name="description" content="Real fruit, thoughtful craft and joyful flavors, slow-churned in small batches in Bengaluru. Shop 500 ml pints, build your own cone or order a party pack.">
+  <meta name="theme-color" content="#EEE5F6">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://kalix.example/">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KALIX Ice Cream">
+  <meta property="og:title" content="KALIX Ice Cream — Ice cream in full bloom">
+  <meta property="og:description" content="Small-batch ice cream, slow-churned in Bengaluru. Free cold delivery over ₹999.">
+  <meta property="og:url" content="https://kalix.example/">
+  <meta property="og:image" content="https://kalix.example/assets/img/hero-ube-cloud.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Ube Cloud pint beside an ube and pistachio waffle cone.">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Icons / manifest -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Instrument+Serif:ital@0;1&amp;family=Lilita+One&amp;display=swap">
+
+  <link rel="preload" as="image" href="assets/img/hero-ube-cloud.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "IceCreamShop",
+    "name": "KALIX Ice Cream",
+    "url": "https://kalix.example/",
+    "image": "https://kalix.example/assets/img/hero-ube-cloud.webp",
+    "description": "Small-batch ice cream, slow-churned in Bengaluru.",
+    "priceRange": "₹₹",
+    "servesCuisine": "Ice cream",
+    "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressRegion": "KA", "addressCountry": "IN" }
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+<!-- ============ ANNOUNCEMENT + HEADER ============ -->
+<div class="announce">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg>
+  <span>Small batches. Big flavor. Free cold delivery over ₹999.</span>
+</div>
+
+<header class="header" id="top">
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#top" class="logo" aria-label="KALIX home">KALIX</a>
+    <ul class="nav-links">
+      <li><a class="nav-link" href="#shop">Shop pints</a></li>
+      <li><a class="nav-link" href="#build">Build a cone</a></li>
+      <li><a class="nav-link" href="#story">Our story</a></li>
+      <li><a class="nav-link" href="#party">Party packs</a></li>
+      <li><a class="nav-link" href="#find">Find us</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" type="button" id="cart-open" aria-label="Cart, 0 items" aria-haspopup="dialog" aria-controls="cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+      </button>
+      <a class="btn hide-sm" href="#shop">Order now</a>
+      <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="i-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+        <svg class="i-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="wrap mobile-menu" id="mobile-menu" hidden>
+    <a class="nav-link" href="#shop">Shop pints</a>
+    <a class="nav-link" href="#build">Build a cone</a>
+    <a class="nav-link" href="#story">Our story</a>
+    <a class="nav-link" href="#party">Party packs</a>
+    <a class="nav-link" href="#find">Find us</a>
+    <a class="btn" href="#shop">Order now</a>
+  </div>
+</header>
+
+<main id="main">
+<!-- ============ HERO CAROUSEL ============ -->
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="Featured at KALIX" data-carousel style="--hero-bg:#EEE5F6;--hero-ink:#281936">
+  <div class="hero-deco" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="sprinkle sprinkle--1"></span>
+    <span class="sprinkle sprinkle--2"></span>
+    <span class="sprinkle sprinkle--3"></span>
+    <span class="sprinkle sprinkle--4"></span>
+    <span class="sprinkle sprinkle--5"></span>
+  </div>
+
+  <div class="slides" data-slides aria-live="off">
+    <!-- Slide 1: Ube Cloud -->
+    <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4: Ube Cloud" data-bg="#EEE5F6" data-ink="#281936" style="--accent:#54236B">
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="eyebrow intro" style="--d:.05s">Small-batch ice cream</p>
+          <h1 id="hero-h" class="h1"><span class="h-line"><span class="intro-line" style="--d:.15s">Ice cream in</span></span><span class="h-line"><span class="serif intro-line" style="--d:.3s">full bloom.</span></span></h1>
+          <p class="body hero-lede intro" style="--d:.45s">Real fruit, thoughtful craft and joyful flavors, slow-churned in small batches, from Bengaluru to your freezer.</p>
+          <div class="ctas intro" style="--d:.6s">
+            <a class="btn" href="#shop">Shop pints
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn--line" href="#find">Find a scoop bar</a>
+          </div>
+        </div>
+        <div class="hero-img intro-img" data-parallax="0.08">
+          <div class="hero-float">
+            <img src="assets/img/hero-ube-cloud.webp" width="1200" height="1200" alt="Ube Cloud pint beside an ube and pistachio waffle cone." fetchpriority="high" decoding="async">
+          </div>
+          <p class="fotm intro" style="--d:.9s">Ube Cloud<span class="fotm-rule" aria-hidden="true"></span>Flavor of<br>the month</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Mango Chili Pop -->
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4: Mango Chili Pop" data-bg="#F8E5CC" data-ink="#281936" style="--accent:#9A5A0E">
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="eyebrow intro" style="--d:.05s">New this season</p>
+          <h2 class="h1"><span class="h-line"><span class="intro-line" style="--d:.15s">Sweet, then</span></span><span class="h-line"><span class="serif intro-line" style="--d:.3s">spicy.</span></span></h2>
+          <p class="body hero-lede intro" style="--d:.45s">Mango Chili Pop: Alphonso mango sorbet with Kashmiri chili and lime. Vegan, bright and a little bit wild.</p>
+          <div class="ctas intro" style="--d:.6s">
+            <button class="btn" type="button" data-hero-add="mango">Add to cart · ₹449</button>
+            <a class="btn btn--line" href="#shop">See all flavors</a>
+          </div>
+        </div>
+        <div class="hero-img intro-img" data-parallax="0.08">
+          <div class="hero-float">
+            <img src="assets/img/pint-mango-chili-pop.webp" width="760" height="760" alt="Mango Chili Pop pint with mango sorbet, lime and chili." loading="lazy" decoding="async">
+          </div>
+          <div class="sticker intro" style="--d:.8s" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><defs><path id="sticker-path-1" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs><text><textPath href="#sticker-path-1" textLength="222" lengthAdjust="spacing">NEW DROP • 100% VEGAN • SPICY •</textPath></text></svg>
+            <span>New</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Build a cone -->
+    <div class="slide slide--dark" role="group" aria-roledescription="slide" aria-label="3 of 4: Build a cone" data-bg="#2E1A40" data-ink="#FFF9F1" style="--accent:#CDB8E6">
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="eyebrow intro" style="--d:.05s">Build your own</p>
+          <h2 class="h1"><span class="h-line"><span class="intro-line" style="--d:.15s">Three scoops.</span></span><span class="h-line"><span class="serif intro-line" style="--d:.3s">Endless combos.</span></span></h2>
+          <p class="body hero-lede intro" style="--d:.45s">Pick any three of our six flavors and stack a cone that is entirely yours. ₹149 a scoop.</p>
+          <div class="ctas intro" style="--d:.6s">
+            <a class="btn btn--amber" href="#build">Build your cone
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn--line-light" href="#find">Visit a scoop bar</a>
+          </div>
+        </div>
+        <div class="hero-img hero-img--glow intro-img" data-parallax="0.08">
+          <div class="hero-float">
+            <img src="assets/img/cone-three-scoops.webp" width="900" height="1350" alt="Waffle cone with pistachio, strawberry and ube scoops." loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Party packs -->
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4: Party packs" data-bg="#FBE1E6" data-ink="#281936" style="--accent:#9B2C52">
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="eyebrow intro" style="--d:.05s">Party packs</p>
+          <h2 class="h1"><span class="h-line"><span class="intro-line" style="--d:.15s">Good things</span></span><span class="h-line"><span class="serif intro-line" style="--d:.3s">come in fours.</span></span></h2>
+          <p class="body hero-lede intro" style="--d:.45s">Four pints, one very good evening. Packed in an insulated tote with spoons and a note.</p>
+          <div class="ctas intro" style="--d:.6s">
+            <a class="btn" href="#party">Get a party pack
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn--line" href="#shop">Shop single pints</a>
+          </div>
+        </div>
+        <div class="hero-img intro-img" data-parallax="0.08">
+          <div class="hero-float">
+            <img src="assets/img/party-pack.webp" width="1300" height="975" alt="Four KALIX pints with an insulated tote, wooden spoons and a gift card." loading="lazy" decoding="async">
+          </div>
+          <div class="price-tag intro" style="--d:.8s"><strong>₹1,599</strong><span>for 4 pints</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-ui">
+    <div class="wrap hero-ui-in">
+      <div class="hero-dots" role="group" aria-label="Choose slide">
+        <button class="hero-dot is-active" type="button" aria-label="Slide 1: Ube Cloud" aria-current="true"><span class="fill"></span></button>
+        <button class="hero-dot" type="button" aria-label="Slide 2: Mango Chili Pop"><span class="fill"></span></button>
+        <button class="hero-dot" type="button" aria-label="Slide 3: Build a cone"><span class="fill"></span></button>
+        <button class="hero-dot" type="button" aria-label="Slide 4: Party packs"><span class="fill"></span></button>
+      </div>
+      <p class="hero-count" aria-hidden="true"><span data-hero-current>01</span> / 04</p>
+      <div class="hero-arrows">
+        <button class="hero-arrow" type="button" data-hero-pause aria-label="Pause slideshow">
+          <svg class="i-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="i-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+        </button>
+        <button class="hero-arrow" type="button" data-hero-prev aria-label="Previous slide">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="hero-arrow" type="button" data-hero-next aria-label="Next slide">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section class="wrap" aria-label="Why KALIX">
+  <ul class="benefits">
+    <li class="benefit reveal" style="--i:0">
+      <span class="bicon" style="background:var(--leaf)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4E7A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14Z"/><path d="M5 19 13 11"/></svg></span>
+      <span><span class="btitle">Real ingredients</span><span class="bsub">Whole fruit, real milk and nuts.</span></span>
+    </li>
+    <li class="benefit reveal" style="--i:1">
+      <span class="bicon" style="background:var(--lilac-100)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#54236B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12a2 2 0 1 1 2-2 4 4 0 1 1-4 4 6 6 0 1 1 6 6"/></svg></span>
+      <span><span class="btitle">Slow churned</span><span class="bsub">Less air, more ice cream.</span></span>
+    </li>
+    <li class="benefit reveal" style="--i:2">
+      <span class="bicon" style="background:var(--sky)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#24628A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg></span>
+      <span><span class="btitle">Delivered frozen</span><span class="bsub">Insulated boxes, every order.</span></span>
+    </li>
+    <li class="benefit reveal" style="--i:3">
+      <span class="bicon" style="background:var(--peach)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A5A0E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/><path d="M12 7H8a2.5 2.5 0 1 1 0-5c3 0 4 5 4 5Z"/><path d="M12 7h4a2.5 2.5 0 1 0 0-5c-3 0-4 5-4 5Z"/></svg></span>
+      <span><span class="btitle">Made to share</span><span class="bsub">Party packs for any occasion.</span></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ FLAVOR TICKER ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-group"><span class="mq-item">Ube Cloud</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item serif">Pistachio Rose</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item">Mango Chili Pop</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item serif">Midnight Blackberry</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item">Salted Jaggery</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item serif">Strawberry Lychee</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg></div>
+    <div class="marquee-group"><span class="mq-item">Ube Cloud</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item serif">Pistachio Rose</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item">Mango Chili Pop</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item serif">Midnight Blackberry</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item">Salted Jaggery</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg><span class="mq-item serif">Strawberry Lychee</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20"/><path d="m4.9 4.9 14.2 14.2"/><path d="M2 12h20"/><path d="m19.1 4.9-14.2 14.2"/></svg></div>
+  </div>
+</div>
+
+<!-- ============ SHOP ============ -->
+<section id="shop" class="wrap shop" aria-labelledby="shop-h">
+  <div class="head reveal">
+    <div>
+      <p class="eyebrow">Shop pints</p>
+      <h2 id="shop-h" class="h2">Find your next <span class="serif">favorite.</span></h2>
+    </div>
+    <div class="tabs" role="group" aria-label="Filter flavors">
+      <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="tab" type="button" data-filter="fruity" aria-pressed="false">Fruity</button>
+      <button class="tab" type="button" data-filter="creamy" aria-pressed="false">Creamy</button>
+      <button class="tab" type="button" data-filter="vegan" aria-pressed="false">Vegan</button>
+    </div>
+  </div>
+  <p class="note" role="status" data-filter-note>All 6 flavors · 500 ml pints · ₹449 each</p>
+
+  <ul class="grid">
+    <li><article class="card reveal" style="--i:0" data-product="ube" data-cats="creamy vegan">
+      <div class="card-art" style="background:var(--lilac-100)"><img src="assets/img/pint-ube-cloud.webp" width="760" height="760" loading="lazy" decoding="async" alt="Ube Cloud pint with purple yam ice cream, toasted rice and coconut."></div>
+      <div class="card-body">
+        <div class="card-top"><h3 class="card-name">Ube Cloud</h3><p class="card-price">₹449</p></div>
+        <p class="card-meta">500 ml · Vegan</p>
+        <p class="card-desc">Purple yam and coconut milk with a toasted rice crunch. Our signature.</p>
+        <div class="card-act"></div>
+      </div>
+    </article></li>
+    <li><article class="card reveal" style="--i:1" data-product="pistachio" data-cats="creamy">
+      <div class="card-art" style="background:var(--sage)"><img src="assets/img/pint-pistachio-rose.webp" width="760" height="760" loading="lazy" decoding="async" alt="Pistachio Rose pint with pistachio ice cream and rose jam ribbons."></div>
+      <div class="card-body">
+        <div class="card-top"><h3 class="card-name">Pistachio Rose</h3><p class="card-price">₹449</p></div>
+        <p class="card-meta">500 ml · Contains nuts</p>
+        <p class="card-desc">Slow-roasted pistachio folded with rose petal jam and sea salt.</p>
+        <div class="card-act"></div>
+      </div>
+    </article></li>
+    <li><article class="card reveal" style="--i:2" data-product="mango" data-cats="fruity vegan">
+      <div class="card-art" style="background:var(--peach)"><img src="assets/img/pint-mango-chili-pop.webp" width="760" height="760" loading="lazy" decoding="async" alt="Mango Chili Pop pint with mango sorbet, lime and chili."></div>
+      <div class="card-body">
+        <div class="card-top"><h3 class="card-name">Mango Chili Pop</h3><p class="card-price">₹449</p></div>
+        <p class="card-meta">500 ml · Vegan</p>
+        <p class="card-desc">Alphonso mango sorbet with Kashmiri chili and lime. Sweet, then spicy.</p>
+        <div class="card-act"></div>
+      </div>
+    </article></li>
+    <li><article class="card reveal" style="--i:0" data-product="blackberry" data-cats="fruity creamy">
+      <div class="card-art" style="background:var(--lilac-200)"><img src="assets/img/pint-midnight-blackberry.webp" width="760" height="760" loading="lazy" decoding="async" alt="Midnight Blackberry pint with vanilla cheesecake ice cream, blackberry ripple and biscuit crumbs."></div>
+      <div class="card-body">
+        <div class="card-top"><h3 class="card-name">Midnight Blackberry</h3><p class="card-price">₹449</p></div>
+        <p class="card-meta">500 ml · Contains gluten</p>
+        <p class="card-desc">Blackberry ripple through vanilla cheesecake with biscuit crumble.</p>
+        <div class="card-act"></div>
+      </div>
+    </article></li>
+    <li><article class="card reveal" style="--i:1" data-product="jaggery" data-cats="creamy">
+      <div class="card-art" style="background:var(--sand)"><img src="assets/img/pint-salted-jaggery.webp" width="760" height="760" loading="lazy" decoding="async" alt="Salted Jaggery pint with caramel ice cream, jaggery pieces and salt flakes."></div>
+      <div class="card-body">
+        <div class="card-top"><h3 class="card-name">Salted Jaggery</h3><p class="card-price">₹449</p></div>
+        <p class="card-meta">500 ml · Vegetarian</p>
+        <p class="card-desc">Jaggery caramel and brown butter with ribbons of flaky salt.</p>
+        <div class="card-act"></div>
+      </div>
+    </article></li>
+    <li><article class="card reveal" style="--i:2" data-product="strawberry" data-cats="fruity vegan">
+      <div class="card-art" style="background:var(--rose)"><img src="assets/img/pint-strawberry-lychee.webp" width="760" height="760" loading="lazy" decoding="async" alt="Strawberry Lychee pint with pink sorbet, strawberry and lychee fruit."></div>
+      <div class="card-body">
+        <div class="card-top"><h3 class="card-name">Strawberry Lychee</h3><p class="card-price">₹449</p></div>
+        <p class="card-meta">500 ml · Vegan</p>
+        <p class="card-desc">Strawberry and lychee with a popping-candy sparkle.</p>
+        <div class="card-act"></div>
+      </div>
+    </article></li>
+  </ul>
+</section>
+
+<!-- ============ BUILD A CONE ============ -->
+<section id="build" class="build" aria-labelledby="build-h">
+  <div class="wrap build-in">
+    <figure class="cone reveal-zoom">
+      <img data-parallax="-0.06" src="assets/img/cone-three-scoops.webp" width="900" height="1350" loading="lazy" decoding="async" alt="Waffle cone with pistachio, strawberry and ube scoops.">
+      <figcaption class="caption">Pictured: Ube Cloud, Strawberry Lychee and Pistachio Rose</figcaption>
+    </figure>
+    <div class="build-side">
+      <div class="build-copy reveal">
+        <p class="eyebrow">Build your own</p>
+        <h2 id="build-h" class="h2">A little more <span class="serif">you.</span></h2>
+        <p class="build-lede">Three scoops. Endless combinations. Build a cone that's entirely your flavor, ready at any scoop bar.</p>
+      </div>
+      <div class="build-ui">
+        <div class="flavors" role="group" aria-label="Choose up to three scoops" data-flavors></div>
+        <p class="limit-note" role="status" data-limit-note></p>
+
+        <div class="summary">
+          <div class="summary-main">
+            <span class="summary-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A5A0E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10a5 5 0 0 1 10 0"/><path d="M6 10h12l-6 12Z"/></svg>
+            </span>
+            <div style="min-width:0">
+              <p class="summary-kicker">Your cone</p>
+              <p class="summary-head" data-cone-head>No scoops yet</p>
+              <p class="summary-names" data-cone-names>Pick up to three flavors.</p>
+            </div>
+          </div>
+          <div class="summary-actions">
+            <button class="ghost" type="button" data-cone-undo disabled>Undo</button>
+            <button class="ghost" type="button" data-cone-clear disabled>Clear</button>
+            <button class="btn" type="button" data-cone-add disabled>Add to cart</button>
+          </div>
+          <p class="cone-added" role="status" data-cone-added hidden></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story" aria-labelledby="story-h">
+  <div class="story">
+    <figure class="story-img reveal-clip">
+      <img data-parallax="0.1" class="parallax-img" src="assets/img/story-scoop.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="A metal scoop lifting ube ice cream from a small-batch gelato pan.">
+    </figure>
+    <div class="story-copy reveal">
+      <p class="eyebrow">Our roots</p>
+      <h2 id="story-h" class="h2">Good things take<br><span class="serif">a little time.</span></h2>
+      <p class="body">KALIX is named after the calyx, the small green cup that holds a flower while it blooms. We think a cone does the same for ice cream. So we pick fruit at its peak and slow-churn it in small batches to bring out real, honest flavor.</p>
+      <ol class="steps">
+        <li class="reveal" style="--i:0"><span class="step-n">01</span><span class="step-t">Picked at peak</span><span class="step-d">Fruit at its freshest, always.</span></li>
+        <li class="reveal" style="--i:1"><span class="step-n">02</span><span class="step-t">Churned slow</span><span class="step-d">A creamier, richer scoop.</span></li>
+        <li class="reveal" style="--i:2"><span class="step-n">03</span><span class="step-t">Made in small batches</span><span class="step-d">Because flavor takes time.</span></li>
+      </ol>
+      <a class="btn" href="#find">Meet KALIX
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTY PACK ============ -->
+<section id="party" class="party" aria-labelledby="party-h">
+  <div class="wrap party-in">
+    <div class="party-cta reveal">
+      <p class="eyebrow">Party packs</p>
+      <h2 id="party-h" class="h2">Good things<br><span class="serif">come in fours.</span></h2>
+      <p class="body">Four pints, one very good evening. Pick any four flavors, packed in an insulated tote with spoons and a note.</p>
+      <p class="party-price">₹1,599 <small>for 4 pints</small></p>
+      <a class="btn" href="#shop">Build a party pack
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+    </div>
+    <figure class="party-img reveal-zoom">
+      <img src="assets/img/party-pack.webp" width="1300" height="975" loading="lazy" decoding="async" alt="Four KALIX pints with an insulated tote, wooden spoons and a gift card.">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ FIND US ============ -->
+<section id="find" class="wrap find" aria-labelledby="find-h">
+  <div class="find-in">
+    <div class="reveal">
+      <p class="eyebrow">Find us</p>
+      <h2 id="find-h" class="h2">Your neighborhood <span class="serif">scoop.</span></h2>
+      <p class="body">Drop by for a taste. Find KALIX scoop bars across Bengaluru.</p>
+      <form role="search" data-find-form>
+        <label class="label" for="where">Search by area or landmark</label>
+        <div class="field">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A6E86" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="where" class="input" type="search" name="q" placeholder="e.g. Koramangala" autocomplete="off">
+          <button type="submit" class="btn btn--sm">Search</button>
+        </div>
+      </form>
+      <p class="note" role="status" data-store-note>4 scoop bars in Bengaluru</p>
+      <ul class="stores" data-stores>
+        <li data-store="indiranagar" data-x="54" data-y="24"><button class="store" type="button" aria-pressed="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#54236B" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"/><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"/></svg>
+          <span><span class="store-name">Indiranagar</span><span class="store-sub"><span data-area>100 Feet Road</span> · till 11:30 pm</span></span>
+        </button></li>
+        <li data-store="koramangala" data-x="66" data-y="56"><button class="store" type="button" aria-pressed="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#54236B" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"/><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"/></svg>
+          <span><span class="store-name">Koramangala</span><span class="store-sub"><span data-area>5th Block</span> · till midnight</span></span>
+        </button></li>
+        <li data-store="jayanagar" data-x="46" data-y="82"><button class="store" type="button" aria-pressed="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#54236B" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"/><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"/></svg>
+          <span><span class="store-name">Jayanagar</span><span class="store-sub"><span data-area>4th Block</span> · till 11 pm</span></span>
+        </button></li>
+        <li data-store="whitefield" data-x="18" data-y="60"><button class="store" type="button" aria-pressed="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#54236B" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"/><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"/></svg>
+          <span><span class="store-name">Whitefield</span><span class="store-sub"><span data-area>ITPL Main Road</span> · till 10 pm</span></span>
+        </button></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <p class="map-kicker">Bengaluru · Scoop bars</p>
+      <div class="map map-anim" role="img" aria-label="Map of four KALIX scoop bars in Bengaluru. Selected: Indiranagar, 100 Feet Road" data-map>
+        <svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="640" height="400" fill="#EEE5F6"/>
+          <path d="M0 110 L640 70 M0 250 C200 230 420 280 640 220 M180 0 L230 400 M430 0 L380 400 M0 330 L640 300 M60 0 L120 400 M540 0 L600 400" stroke="#FFFFFF" stroke-width="9" fill="none"/>
+          <path d="M0 40 L320 160 L640 120 M300 0 L280 400 M0 180 H640" stroke="#FFFFFF" stroke-width="4" fill="none" opacity=".8"/>
+          <path d="M120 60 L200 130 M480 280 L600 360 M250 310 L340 360" stroke="#DCCFEA" stroke-width="3" fill="none"/>
+        </svg>
+        <span class="pin is-active" data-pin="indiranagar" style="--i:0;left:54%;top:24%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"/><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"/></svg><span class="pin-label">Indiranagar</span></span>
+        <span class="pin" data-pin="koramangala" style="--i:1;left:66%;top:56%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"/><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"/></svg><span class="pin-label">Koramangala</span></span>
+        <span class="pin" data-pin="jayanagar" style="--i:2;left:46%;top:82%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"/><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"/></svg><span class="pin-label">Jayanagar</span></span>
+        <span class="pin" data-pin="whitefield" style="--i:3;left:18%;top:60%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12a7.5 7.5 0 0 1 15 0c0 5.4-7.5 12-7.5 12Z"/><circle cx="12" cy="10" r="2.6" fill="#FFF9F1"/></svg><span class="pin-label">Whitefield</span></span>
+        <span class="map-tag" aria-hidden="true">Illustrative map</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="news" aria-labelledby="news-h">
+  <div class="wrap news-in">
+    <div class="reveal">
+      <h2 id="news-h" class="h2">Fresh flavors. <span class="serif">First dibs.</span></h2>
+      <p class="body">Join our list for seasonal drops, events and more.</p>
+    </div>
+    <div class="reveal">
+      <form data-news-form novalidate>
+        <label class="label" for="email">Your email address</label>
+        <div class="field news-form">
+          <input id="email" class="input" type="email" name="email" placeholder="name@email.com" autocomplete="email" required aria-describedby="news-note">
+          <button type="submit" class="btn btn--sm">Subscribe</button>
+        </div>
+      </form>
+      <p class="news-note" id="news-note" role="status" data-news-note></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">KALIX</a>
+        <p class="foot-kicker">ICE CREAM</p>
+        <p class="foot-tag">Small-batch ice cream. Big little joys.</p>
+      </div>
+      <nav aria-label="Shop">
+        <p class="foot-h">Shop</p>
+        <ul class="foot-list">
+          <li><a class="foot-link" href="#shop">All pints</a></li>
+          <li><a class="foot-link" href="#build">Build a cone</a></li>
+          <li><a class="foot-link" href="#party">Party packs</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company">
+        <p class="foot-h">Company</p>
+        <ul class="foot-list">
+          <li><a class="foot-link" href="#story">Our story</a></li>
+          <li><a class="foot-link" href="#find">Find us</a></li>
+          <li><a class="foot-link" href="mailto:careers@kalix.example">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Help">
+        <p class="foot-h">Help</p>
+        <ul class="foot-list">
+          <li><a class="foot-link" href="mailto:hello@kalix.example">Contact</a></li>
+          <li><a class="foot-link" href="#find">FAQs</a></li>
+          <li><a class="foot-link" href="#shop">Shipping &amp; returns</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-bar">
+      <div class="socials">
+        <a href="https://instagram.com/" class="icon-btn" aria-label="KALIX on Instagram" rel="noopener" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://facebook.com/" class="icon-btn" aria-label="KALIX on Facebook" rel="noopener" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h2.5l.5-4h-3V7a1 1 0 0 1 1-1h2Z"/></svg>
+        </a>
+        <a href="https://youtube.com/" class="icon-btn" aria-label="KALIX on YouTube" rel="noopener" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3Z"/></svg>
+        </a>
+      </div>
+      <span class="copyright">© <span data-year>2026</span> KALIX Ice Cream. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="scrim" data-scrim hidden></div>
+<aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-h" hidden>
+  <div class="drawer-head">
+    <button class="icon-btn" type="button" data-back aria-label="Back to cart" hidden>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <h2 class="drawer-title" id="cart-h" data-drawer-title tabindex="-1">Your cart</h2>
+    <button class="icon-btn" type="button" data-cart-close aria-label="Close cart">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
+    </button>
+  </div>
+
+  <ol class="steps-bar" data-steps aria-label="Checkout progress">
+    <li class="is-current">Cart</li>
+    <li>Delivery</li>
+    <li>Done</li>
+  </ol>
+
+  <!-- View 1: cart -->
+  <div class="view" data-view="cart">
+    <div class="drawer-body">
+      <div class="drawer-empty" data-cart-empty>
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#B9A9C8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+        <p>Your cart is empty. Let's fix that.</p>
+        <a class="btn" href="#shop" data-cart-close>Shop pints</a>
+      </div>
+      <ul class="lines" data-cart-lines></ul>
+    </div>
+    <div class="drawer-foot" data-cart-foot hidden>
+      <p class="ship" data-ship-note></p>
+      <div class="ship-bar" aria-hidden="true"><span data-ship-bar></span></div>
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd data-subtotal>₹0</dd></div>
+        <div><dt>Delivery</dt><dd data-delivery>Free</dd></div>
+        <div class="totals-grand"><dt>Total</dt><dd data-total>₹0</dd></div>
+      </dl>
+      <p class="cod-pill">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+        Cash on Delivery only
+      </p>
+      <button class="btn btn--block" type="button" data-checkout>Proceed to checkout</button>
+    </div>
+  </div>
+
+  <!-- View 2: delivery details + COD -->
+  <form class="view" data-view="checkout" data-checkout-form novalidate hidden>
+    <div class="drawer-body">
+      <div class="form-alert" role="alert" data-form-alert hidden></div>
+
+      <fieldset class="fs">
+        <legend class="fs-legend">Contact</legend>
+        <div class="f">
+          <label class="f-label" for="co-name">Full name</label>
+          <input class="f-input" id="co-name" name="name" type="text" autocomplete="name" required maxlength="80">
+          <p class="f-error" id="co-name-err"></p>
+        </div>
+        <div class="f">
+          <label class="f-label" for="co-phone">Mobile number</label>
+          <div class="f-prefix"><span aria-hidden="true">+91</span>
+            <input class="f-input" id="co-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" required maxlength="10" placeholder="10-digit mobile">
+          </div>
+          <p class="f-error" id="co-phone-err"></p>
+        </div>
+        <div class="f">
+          <label class="f-label" for="co-email">Email <span class="f-opt">(optional)</span></label>
+          <input class="f-input" id="co-email" name="email" type="email" autocomplete="email" maxlength="120">
+          <p class="f-error" id="co-email-err"></p>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs">
+        <legend class="fs-legend">Delivery address</legend>
+        <div class="f">
+          <label class="f-label" for="co-address">House / flat, street</label>
+          <textarea class="f-input" id="co-address" name="address" rows="2" autocomplete="street-address" required maxlength="200"></textarea>
+          <p class="f-error" id="co-address-err"></p>
+        </div>
+        <div class="f-row">
+          <div class="f">
+            <label class="f-label" for="co-area">Area</label>
+            <input class="f-input" id="co-area" name="area" type="text" autocomplete="address-level3" required maxlength="60" placeholder="e.g. Indiranagar">
+            <p class="f-error" id="co-area-err"></p>
+          </div>
+          <div class="f">
+            <label class="f-label" for="co-pin">Pincode</label>
+            <input class="f-input" id="co-pin" name="pincode" type="text" inputmode="numeric" autocomplete="postal-code" required maxlength="6">
+            <p class="f-error" id="co-pin-err"></p>
+          </div>
+        </div>
+        <div class="f">
+          <label class="f-label" for="co-landmark">Landmark <span class="f-opt">(optional)</span></label>
+          <input class="f-input" id="co-landmark" name="landmark" type="text" maxlength="80">
+        </div>
+        <div class="f">
+          <label class="f-label" for="co-slot">Delivery time</label>
+          <select class="f-input" id="co-slot" name="slot" data-slots></select>
+        </div>
+        <div class="f">
+          <label class="f-label" for="co-notes">Notes for the rider <span class="f-opt">(optional)</span></label>
+          <input class="f-input" id="co-notes" name="notes" type="text" maxlength="140" placeholder="e.g. Ring the bell twice">
+        </div>
+      </fieldset>
+
+      <fieldset class="fs">
+        <legend class="fs-legend">Payment</legend>
+        <label class="pay-opt">
+          <input type="radio" name="payment" value="cod" checked>
+          <span class="pay-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+          </span>
+          <span class="pay-text">
+            <span class="pay-title">Cash on Delivery</span>
+            <span class="pay-sub">Pay in cash when your order arrives. Please keep change handy.</span>
+          </span>
+        </label>
+        <p class="pay-note">Cash on Delivery is the only payment method we accept right now.</p>
+      </fieldset>
+
+      <div class="fs order-mini">
+        <p class="fs-legend">Order summary</p>
+        <ul class="mini-lines" data-mini-lines></ul>
+      </div>
+    </div>
+    <div class="drawer-foot">
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd data-subtotal>₹0</dd></div>
+        <div><dt>Delivery</dt><dd data-delivery>Free</dd></div>
+        <div class="totals-grand"><dt>Pay on delivery</dt><dd data-total>₹0</dd></div>
+      </dl>
+      <button class="btn btn--block" type="submit" data-place>Place order</button>
+    </div>
+  </form>
+
+  <!-- View 3: confirmation -->
+  <div class="view" data-view="done" hidden>
+    <div class="drawer-body done">
+      <svg class="done-check" width="84" height="84" viewBox="0 0 52 52" aria-hidden="true">
+        <circle class="done-circle" cx="26" cy="26" r="24" fill="none" stroke="#3F6B1F" stroke-width="3"/>
+        <path class="done-tick" fill="none" stroke="#3F6B1F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M15 27l7 7 15-15"/>
+      </svg>
+      <h3 class="done-title">Order placed!</h3>
+      <p class="done-id">Order <strong data-done-id></strong></p>
+      <div class="done-card">
+        <p><span>Pay on delivery</span><strong data-done-total></strong></p>
+        <p><span>Payment</span><strong>Cash on Delivery</strong></p>
+        <p><span>Deliver to</span><strong data-done-address></strong></p>
+        <p><span>When</span><strong data-done-slot></strong></p>
+      </div>
+      <p class="done-msg" data-done-msg></p>
+      <a class="btn btn--block btn--wa" data-done-wa target="_blank" rel="noopener" hidden>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
+        Confirm on WhatsApp
+      </a>
+      <button class="btn btn--line btn--block" type="button" data-cart-close>Continue shopping</button>
+    </div>
+  </div>
+</aside>
+
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+<noscript>
+  <style>.reveal,.reveal-zoom,.reveal-zoom>img,.map-anim .pin,.benefit .bicon{opacity:1!important;transform:none!important}.reveal-clip{clip-path:none!important}</style>
+</noscript>
+</body>
+</html>
