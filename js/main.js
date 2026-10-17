@@ -532,7 +532,7 @@
   scrim.addEventListener('click', closeCart);
   $$('[data-cart-close]').forEach(function (b) { b.addEventListener('click', closeCart); });
 
-  var TITLES = { cart: 'Your cart', checkout: 'Delivery details', done: 'Thank you!' };
+  var TITLES = { cart: 'Your cart', checkout: 'Delivery details', done: 'Your order' };
   var STEP = { cart: 0, checkout: 1, done: 2 };
   function showView(name, silent) {
     currentView = name;
